@@ -87,12 +87,10 @@ h6 {
   font-weight: 300;
   letter-spacing: 0.1em;
   margin: 0;
-  /* transition: font-size var(--transition-time) var(--transition-mode); */
 }
 
 p {
   margin: 0;
-  /* transition: font-size var(--transition-time) var(--transition-mode); */
 }
 
 a {
@@ -213,7 +211,7 @@ html.dark .dark-mode-toggle-switch::after {
 }
 
 .navbar-banner {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -238,6 +236,10 @@ html.dark .dark-mode-toggle-switch::after {
 .navbar-banner h5,
 .navbar-banner h6 {
   margin: 0;
+}
+
+.navbar-banner h2 {
+  font-size: 1.6em;
 }
 
 .navbar-toggler {
@@ -430,6 +432,12 @@ button.navbar-menu-item {
   height: 100%;
 }
 
+/* Small screen */
+@media screen and (min-width: 576px) {
+  .navbar-banner h2 {
+    font-size: 2em;
+  }
+}
 /* Large screen */
 @media screen and (min-width: 992px) {
   .navbar-toggler {
