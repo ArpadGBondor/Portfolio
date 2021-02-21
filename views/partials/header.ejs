@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Preload removes all transitions at loading. -->
+<html  class="preload" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gabriel's Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Gabriel, Árpád, Gabor, Bondor, Portfolio, Software Developer">
+    <meta name="author" content="Árpád G. Bondor [Gabriel]">
+    <title><%=  typeof(title) !=="undefined" ? `${title} - ` :'' %>Portfolio - Árpád G. Bondor [Gabriel]</title>
+    <script>
+      // Set Dark Mode before loading anything to avoid any flashing
+      const storedTheme = localStorage.getItem('prefers-color-scheme');
+
+      // set default dark mode,
+      //   first check if it was set previously,
+      //   then check the browser's preferences
+      if (storedTheme) {
+        // if we previously chose dark mode, then set dark mode
+        if (storedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+        // if we previously chose light mode, then set light mode
+        if (storedTheme === 'light') {
+          document.documentElement.classList.remove('dark');
+        }
+      } else if (
+        // If there's no saved theme, check the browser's preferences
+        window.matchMedia('(prefers-color-scheme)').media !== 'not all' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        document.documentElement.classList.add('dark');
+      }
+
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
+    <link rel='stylesheet' href='/stylesheets/font-size.css' />
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel='stylesheet' href='/stylesheets/pages.css' />
+    <link rel='stylesheet' href='/stylesheets/utils.css' />
+    <link rel="icon" href="icons/gabriel.ico" />
+  </head>
+  <body>
+    <div class="page-content">
+      <header class="page-header">
+        <!-- NAVIGATION -->
+        <nav class="navbar" id="navbar">
+          <button class="navbar-toggler navbar-button-effect"><div class="navbar-toggler-button"></div></button>
+          <a href="/" class="navbar-banner navbar-button-effect"><h2>Gabriel's portfolio</h2></a>
+          <div class="navbar-menu">
+            <a href="/" class="navbar-menu-item navbar-button-effect<%= ( typeof(activeMenu) !=="undefined"  && activeMenu === 'Home') ? ' active' :'' %>">
+              <p>Home</p>
+            </a>
+            <div class="navbar-menu-vertical-rule"></div>
+            <a href="/introduction" class="navbar-menu-item navbar-button-effect<%= ( typeof(activeMenu) !=="undefined"  && activeMenu === 'Introduction') ? ' active' :'' %>">
+              <p>Introduction</p>
+            </a>
+            <div class="navbar-menu-vertical-rule"></div>
+            <a href="/skills" class="navbar-menu-item navbar-button-effect<%= ( typeof(activeMenu) !=="undefined"  && activeMenu === 'Skills') ? ' active' :'' %>">
+              <p>Skills</p>
+            </a>
+            <div class="navbar-menu-vertical-rule"></div>
+            <a href="/projects" class="navbar-menu-item navbar-button-effect<%= ( typeof(activeMenu) !=="undefined"  && activeMenu === 'Projects') ? ' active' :'' %>">
+              <p>Projects</p>
+            </a>
+            <div class="navbar-menu-vertical-rule"></div>
+            <button class="navbar-menu-item dark-mode-menu-item navbar-button-effect">
+              <div class="dark-mode-toggle"><div class="dark-mode-toggle-switch"></div></div>
+            </button>
+          </div>
+        </nav>
+      </header>
+      <div class="toast-notifications"></div>
+      <main class="content">
+
+ 

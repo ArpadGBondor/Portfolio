@@ -1,0 +1,58 @@
+<!-- prettier-ignore -->
+<%- include('partials/header') %>
+<section class="hero" <% if (hero.img_url) { %>
+  style= "background: url('<%= hero.img_url %>') center center/cover no-repeat fixed" <% } %> >
+  <div class="hero-layer"></div>
+  <div class="hero-content">
+    <p>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+    </p>
+
+    <div class="section-title">
+      <h1><%= hero.h1 %></h1>
+      <small><%= hero.small %></small>
+    </div>
+
+    <% if (hero.p) { %>
+    <div class="section-title">
+      <p><%- hero.p %></p>
+    </div>
+    <% } %>
+
+    <!-- <p>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+    </p> -->
+
+    <div class="timeline-container">
+      <div class="timeline">
+        <% content.forEach(section=>{ %>
+        <div class="timeline-story">
+          <% if (section.img_src) { %>
+          <img class="story-image" src="<%= section.img_src %>" alt="<%= section.h2 %> image" />
+          <% } %>
+          <div class="story-title">
+            <h4><%= section.h2 %></h4>
+            <small><%= section.small %></small>
+          </div>
+          <% section.p.forEach(p=>{ %>
+          <p><%= p %></p>
+          <% }) %> <% if (section.read_more) { %>
+          <a class="read-more btn" href="<%= section.read_more %>">Read more</a>
+          <% } %>
+        </div>
+        <% }); %>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

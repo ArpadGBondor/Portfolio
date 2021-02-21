@@ -1,0 +1,36 @@
+<section class="contacts">
+  <div class="contact-info">
+    <div>
+      <h2 class="section-title">Contact me</h2>
+      <ul class="contact-list">
+        <% contactLinks.forEach(link => { %>
+        <li class="contact">
+          <i class="<%= link.icon %>"></i>
+          <span><%= link.name %>:</span>
+          <% if (link.link !== null) { %>
+          <a href="<%= link.link %>"><span><%= link.address %></span></a>
+          <% } else { %>
+          <span><%= link.address %></span>
+          <% } %>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+
+  <div><h2>or</h2></div>
+
+  <div class="contact-social">
+    <div>
+      <h2 class="section-title">Find me on</h2>
+      <ul class="contact-list">
+        <% socialLinks.forEach(link => { %>
+        <li class="contact">
+          <a href="<%= link.link %>" target="_blank"><i class="<%= link.icon %> social-icon"></i></a>
+          <a href="<%= link.link %>" target="_blank"><span><%= link.name %></span></a>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+    </main>
+    <footer class="footer">
+      <% if (socialLinks && socialLinks.length > 0) { %>
+        <div class="">
+          <% socialLinks.forEach(link => { %> 
+            <a href="<%= link.link %>" target="_blank"><i class="<%= link.icon %> social-icon"></i></a>
+          <% }); %> 
+        </div>
+      <% } %>
+      <div class="">
+        <p><small>Copyright © 2021 Árpád Gábor Bondor</small></p>
+        <% if (contactLinks && contactLinks.length > 0) { %>
+          <p>
+            <small>
+              <% contactLinks.forEach(link => { %> 
+                <span class="footer-contact-info">
+                  <i class="<%= link.icon %>"></i>
+                  <% if (link.link !== null) { %>
+                      <a href="<%= link.link %>"><span><%= link.address %></span></a>
+                  <% } else { %>
+                      <span><%= link.address %></span>
+                  <% } %>
+                </span>
+              <% }); %> 
+            </small>
+          </p>
+        <% } %>
+      </div>
+    </footer>
+  </div>
+  <!-- Unfocus for accessible sites: https://github.com/nuclei/unfocus -->
+  <script src="/javascripts/unfocus.js" charset="utf-8"></script>
+  <!-- Custom JS -->
+  <script src="/javascripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>

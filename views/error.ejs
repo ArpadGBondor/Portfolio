@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="hero-layer"></div>
+  <div class="hero-content">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

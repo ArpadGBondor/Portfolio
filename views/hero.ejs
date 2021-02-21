@@ -1,0 +1,77 @@
+<!-- prettier-ignore -->
+<%- include('partials/header') %>
+<section class="hero" <% if (hero.img_url) { %>
+  style= "background: url('<%= hero.img_url %>') center/cover fixed no-repeat" <% } %> >
+  <div class="hero-layer"></div>
+  <div class="hero-content">
+    <p>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+    </p>
+
+    <div class="section-title">
+      <h1><%= hero.h1 %></h1>
+      <small><%= hero.small %></small>
+    </div>
+
+    <% if (hero.p) { %>
+    <div class="section-title">
+      <p><%- hero.p %></p>
+    </div>
+    <% } %>
+
+    <p>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+    </p>
+  </div>
+</section>
+
+<% content.forEach(section=>{ %>
+<section class="secondary" <% if (section.background_img_url) { %>
+  style= "background: url('<%= section.background_img_url %>') center/cover fixed no-repeat" <% } %>>
+
+  <div class="hero-layer"></div>
+  <div class="secondary-content">
+    <% if (section.h2 === 'Contact') { %>
+    <div class="hero-content"><%- include('partials/contact') %></div>
+    <% } else if (section.h2 === 'Newsletter') { %>
+    <div class="hero-content"><%- include('partials/newsletter') %></div>
+    <% } else if (section.h2 === 'Message') { %>
+    <div class="hero-content"><%- include('partials/message') %></div>
+    <% } else { %> <% if (section.img_src) { %>
+    <div class="section-text">
+      <img class="section-image" src="<%= section.img_src %>" alt="" />
+    </div>
+    <% } else { %>
+    <div class="section-text">
+      <span>
+        <span class="cog rotate"></span>
+        <span class="cog rotate-reverse"></span>
+        <span class="cog rotate"></span>
+      </span>
+    </div>
+    <% } %>
+    <div class="section-text">
+      <div class="section-title">
+        <h2><%= section.h2 %></h2>
+        <small><%= section.small %></small>
+      </div>
+      <% section.p.forEach(p=>{ %>
+      <p><%- p %></p>
+      <% }) %> <% if (section.read_more) { %>
+      <a class="read-more btn" href="<%= section.read_more %>">Read more</a>
+      <% } %>
+    </div>
+
+    <% } %>
+  </div>
+</section>
+
+<% }); %> <%- include('partials/footer') %>

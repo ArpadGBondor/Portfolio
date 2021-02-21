@@ -1,0 +1,100 @@
+<%- include('partials/header') %>
+<section class="hero menu" <% if (hero.img_url) { %>
+  style= "background: url('<%= hero.img_url %>') center center/cover no-repeat fixed" <% } %> >
+
+  <div class="hero-layer"></div>
+  <div class="hero-content">
+    <p>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+    </p>
+
+    <div class="section-title">
+      <h1><%= hero.h1 %></h1>
+      <small><%= hero.small %></small>
+    </div>
+
+    <% if (hero.p) { %>
+    <div class="section-title">
+      <p><%- hero.p %></p>
+    </div>
+    <% } %>
+
+    <p>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+      <span class="cog rotate-reverse"></span>
+      <span class="cog rotate"></span>
+    </p>
+
+    <div class="menu-cards">
+      <% content.forEach(section=>{ %>
+
+      <button class="menu-card">
+        <img class="menu-card-image" src="<%= section.img_src %>" alt="" />
+        <div class="menu-card-title">
+          <p><%= section.h2 %></p>
+          <small><%= section.small %></small>
+        </div>
+      </button>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<div class="menu-container show" id="menu-container">
+  <section class="description">
+    <div class="section-text">
+      <span>
+        <span class="cog rotate"></span>
+        <span class="cog rotate-reverse"></span>
+        <span class="cog rotate"></span>
+        <span class="cog rotate-reverse"></span>
+        <span class="cog rotate"></span>
+      </span>
+      <h2>Click on a card above.</h2>
+      <span>
+        <span class="cog rotate"></span>
+        <span class="cog rotate-reverse"></span>
+        <span class="cog rotate"></span>
+        <span class="cog rotate-reverse"></span>
+        <span class="cog rotate"></span>
+      </span>
+    </div>
+  </section>
+</div>
+
+<% content.forEach(section=>{ %>
+<div class="hidden menu-hidden">
+  <section class="description">
+    <div class="section-image-container">
+      <% if (section.img_src) { %>
+      <img class="section-image" src="<%= section.img_src %>" alt="" />
+      <% } else { %>
+      <div class="section-text">
+        <span>
+          <span class="cog rotate"></span>
+          <span class="cog rotate-reverse"></span>
+          <span class="cog rotate"></span>
+        </span>
+      </div>
+      <% } %>
+    </div>
+    <div class="section-text">
+      <div class="section-title">
+        <h2><%= section.h2 %></h2>
+        <small><%= section.small %></small>
+      </div>
+      <% section.p.forEach(p=>{ %>
+      <p><%= p %></p>
+      <% }) %> <% if (section.read_more) { %>
+      <a class="read-more btn" href="<%= section.read_more %>">Read more</a>
+      <% } %>
+    </div>
+  </section>
+</div>
+<% }); %> <%- include('partials/footer') %>
