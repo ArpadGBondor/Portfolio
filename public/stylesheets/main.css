@@ -11,7 +11,7 @@
 
 :root {
   --color-primary1: #4263f2;
-  --color-primary2: #3250f2;
+  --color-primary2: #3250d2;
   --color-danger1: #ee0033;
   --color-highlight1: #dd5500;
   --color-highlight2: #ffaa00;
@@ -223,7 +223,6 @@ html.dark .dark-mode-toggle-switch::after {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  transition: var(--all-transition);
   letter-spacing: 0.1em;
   z-index: 1000;
 }
@@ -239,7 +238,7 @@ html.dark .dark-mode-toggle-switch::after {
 }
 
 .navbar-banner h2 {
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 
 .navbar-toggler {
@@ -322,7 +321,7 @@ html.dark .dark-mode-toggle-switch::after {
 .navbar-menu {
   position: fixed;
   top: var(--navbar-height);
-  left: -20em;
+  left: -50%;
   width: auto;
   min-width: 50%;
   height: auto;
@@ -351,8 +350,11 @@ html.dark .dark-mode-toggle-switch::after {
 }
 
 .navbar-menu-item {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: var(--navbar-height);
   padding: 0.5em;
   border: 0;
   border-radius: 0.5em;
@@ -436,11 +438,15 @@ button.navbar-menu-item {
 /* Small screen */
 @media screen and (min-width: 576px) {
   .navbar-banner h2 {
-    font-size: 2em;
+    font-size: 1.7em;
   }
 }
 /* Large screen */
 @media screen and (min-width: 992px) {
+  .navbar-banner h2 {
+    font-size: 2em;
+  }
+
   .navbar-toggler {
     display: none;
   }
@@ -794,6 +800,7 @@ section.secondary p {
 
 .btn {
   background-color: var(--color-primary1);
+  background-image: linear-gradient(180deg, var(--color-primary1), var(--color-primary2));
   color: var(--color-bg1);
   font-size: 1.5em;
   padding: 0.5em 2em;
@@ -807,12 +814,22 @@ section.secondary p {
   cursor: pointer;
 }
 
+html.dark .btn {
+  background-image: linear-gradient(0deg, var(--color-primary1), var(--color-primary2));
+}
+
 .btn:hover,
 .btn:focus {
   text-decoration: underline;
   background-color: var(--color-primary2);
+  background-image: linear-gradient(180deg, var(--color-primary2), var(--color-primary1));
   color: var(--color-bg2);
   animation: pulsating 1s ease-in-out infinite;
+}
+
+html.dark .btn:hover,
+html.dark .btn:focus {
+  background-image: linear-gradient(0deg, var(--color-primary2), var(--color-primary1));
 }
 
 @keyframes pulsating {
