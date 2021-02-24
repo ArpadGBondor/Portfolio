@@ -253,6 +253,9 @@ section.description p {
 
 img.skills {
   height: 2em;
+  border: 0.1em solid #fff;
+  border-radius: 1em;
+  margin: 0 0.5em;
 }
 
 /* Timeline */
