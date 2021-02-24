@@ -101,7 +101,6 @@
 .rotate-reverse {
   transform: rotate(390deg);
   animation: rotate-reverse 7s ease-in-out infinite;
-  margin: -0.09em;
 }
 
 @keyframes rotate {

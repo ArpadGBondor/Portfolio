@@ -249,6 +249,12 @@ section.description p {
   }
 }
 
+/* Skills */
+
+img.skills {
+  height: 2em;
+}
+
 /* Timeline */
 .timeline-container {
   min-height: 100vh;
