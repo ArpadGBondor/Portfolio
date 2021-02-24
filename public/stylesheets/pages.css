@@ -251,11 +251,31 @@ section.description p {
 
 /* Skills */
 
-img.skills {
+.skills-container {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.skills {
+  transition: var(--all-transition);
+  /* text-transform: uppercase; */
+  background-color: var(--color-primary2);
+  color: var(--color-bg2);
   height: 2em;
-  border: 0.1em solid #fff;
+  border: 0.1em solid var(--color-primary2);
   border-radius: 1em;
   margin: 0 0.5em;
+}
+
+span.skills {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
 }
 
 /* Timeline */
