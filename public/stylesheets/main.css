@@ -36,8 +36,8 @@ html.dark {
   --color-bg2: #2d304d;
   --color-bg1-trans: rgba(5, 9, 27, 0.8);
   --color-danger1: #ff4466;
-  --color-highlight2: #dd5500;
   --color-highlight1: #ffaa00;
+  --color-highlight2: #994400;
 }
 
 /* XS ~ -80% */
@@ -95,6 +95,13 @@ p {
 
 a {
   color: var(--color-primary1);
+}
+
+a:hover,
+a:active,
+a:focus {
+  transition: color var(--transition-time) var(--transition-mode);
+  color: var(--color-highlight1);
 }
 
 input {
@@ -621,6 +628,12 @@ footer {
   justify-content: space-around;
   transition: var(--all-transition);
   z-index: 1100;
+}
+
+footer a:hover,
+footer a:active,
+footer a:focus {
+  color: var(--color-highlight2);
 }
 
 /* SM ~ 90% */
