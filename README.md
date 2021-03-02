@@ -16,3 +16,9 @@ GOOGLE_REFRESH_TOKEN
 GOOGLE_ACCESS_TOKEN  
 EMAIL_USER: Google e-mail address  
 EMAIL_TO: Where to send contact message  
+
+## MailChimp:
+Register on Mail Chimp for your own API key: https://mailchimp.com/
+mailChimpUserKey: https://admin.mailchimp.com/account/api/
+mailChimpListID: https://admin.mailchimp.com/lists/
+mailChimpServerNumber: the last digits of your API key, eg: "us3"
