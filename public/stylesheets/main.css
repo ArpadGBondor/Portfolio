@@ -813,11 +813,13 @@ section.secondary p {
 
 .btn {
   background-color: var(--color-primary1);
-  background-image: linear-gradient(180deg, var(--color-primary1), var(--color-primary2));
+  background-image: linear-gradient(0deg, var(--color-primary2), var(--color-primary1), var(--color-primary2));
+  background-size: 100% 200%;
+  background-position: 0% 100%;
   color: var(--color-bg1);
   font-size: 1.5em;
   padding: 0.5em 2em;
-  margin: 1.5em auto;
+  margin: 0 auto;
   border-radius: 1em;
   border: 0;
   transition: var(--all-transition);
@@ -828,22 +830,29 @@ section.secondary p {
 }
 
 html.dark .btn {
-  background-image: linear-gradient(0deg, var(--color-primary1), var(--color-primary2));
+  background-image: linear-gradient(0deg, var(--color-primary1), var(--color-primary2), var(--color-primary1));
 }
 
 .btn:hover,
 .btn:focus {
-  text-decoration: underline;
   background-color: var(--color-primary2);
-  background-image: linear-gradient(180deg, var(--color-primary2), var(--color-primary1));
   color: var(--color-bg2);
+  background-position: 0% 0%;
   animation: pulsating 1s ease-in-out infinite;
+  text-decoration: underline;
+  transition: var(--all-transition);
 }
 
-html.dark .btn:hover,
+.btn.submit,
+.btn.read-more {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/* html.dark .btn:hover,
 html.dark .btn:focus {
   background-image: linear-gradient(0deg, var(--color-primary2), var(--color-primary1));
-}
+} */
 
 @keyframes pulsating {
   0% {
