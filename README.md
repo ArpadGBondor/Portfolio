@@ -1,9 +1,13 @@
 # My Portfolio project
 
+I wanted to avoid using Bootstrap and JQuery and create the front-end using pure CSS and vanilla JavaScript only. I also wanted to store all content in database, and display every page based on parameters in the database.
+
 - Front-end:
-  - HTML, CSS, Vanilla Javascript
+  - HTML
+  - CSS
+  - Vanilla Javascript
 - Back-end:
-  - Node.js, Express, Mongoose, Other
+  - Node.js, Express, Mongoose, EJS
 
 ## Enviroment variables:  
 DB_CONNECT: MongoDB connect string  
