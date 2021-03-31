@@ -7,7 +7,10 @@ I wanted to avoid using Bootstrap and JQuery and create the front-end using pure
   - CSS
   - Vanilla Javascript
 - Back-end:
-  - Node.js, Express, Mongoose, EJS
+  - Node.js
+  - Express
+  - Mongoose
+  - EJS
 
 ## Enviroment variables:  
 DB_CONNECT: MongoDB connect string  
