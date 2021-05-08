@@ -21,11 +21,30 @@ GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET  
 GOOGLE_REFRESH_TOKEN  
 GOOGLE_ACCESS_TOKEN  
-EMAIL_USER: Google e-mail address  
-EMAIL_TO: Where to send contact message  
+EMAIL_USER: sender of the email (Google e-mail address)  
+EMAIL_TO: recipient of the email
 
-## MailChimp:
-Register on Mail Chimp for your own API key: https://mailchimp.com/  
-mailChimpUserKey: https://admin.mailchimp.com/account/api/  
-mailChimpListID: https://admin.mailchimp.com/lists/  
-mailChimpServerNumber: the last digits of your API key, eg: "us3"  
+## Site functionality:
+  - ### Database connection
+    - All content is stored in database
+    - DB_CONNECT environment variable stores the connection string to the MongoDB database server.
+      - in my case, I'm using MongoDB Atlas.
+    - The schema of the database, has to match the schemas defined in the models folder.
+  - ### Mailing list signup
+    - MAILCHIMP_API_KEY, MAILCHIMP_LIST_ID, and MAILCHIMP_SERVER_NUMBER environment variables store the credentials to use the MailChimp API.  
+    - User can signup to a MailChimp mailing list.
+    - Register on Mail Chimp for your own API key: https://mailchimp.com/  
+    - mailChimpUserKey: https://admin.mailchimp.com/account/api/  
+    - mailChimpListID: https://admin.mailchimp.com/lists/  
+    - mailChimpServerNumber: the last digits of your API key, eg: "us3"  
+  - ### Message sending  
+    - User type in a contact message and send it as an email
+    - The site uses Google Gmail API to send the email
+    -  ... 
+  - ### Notifications  
+    - The site can display notification messages to communicate with the user.
+  - ### Switch between Light-mode and Dark-mode
+    - The site has two color schemes.
+    - The site automatically recognises the browser's default color scheme settings.
+    - There's a button in the navbar that the user can use to switch between the two color schemes.
+      - The site saves the user's last color scheme choice to the local storage, and automatically uses it during the next visit.
