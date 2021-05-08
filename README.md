@@ -1,4 +1,4 @@
-# My Portfolio project
+# [My Portfolio project](https://gabriel-bondor.herokuapp.com/)
 
 I wanted to avoid using Bootstrap and JQuery and create the front-end using pure CSS and vanilla JavaScript only. I also wanted to store all content in database, and display every page based on parameters in the database.
 
