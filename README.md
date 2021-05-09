@@ -21,8 +21,7 @@ GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET  
 GOOGLE_REFRESH_TOKEN  
 GOOGLE_ACCESS_TOKEN  
-EMAIL_USER: sender of the email (Google e-mail address)  
-EMAIL_TO: recipient of the email
+EMAIL_USER: sender and recipient of the email (Google e-mail address)  
 
 ## Site functionality:
   - ### Database connection
@@ -40,7 +39,14 @@ EMAIL_TO: recipient of the email
   - ### Message sending  
     - User type in a contact message and send it as an email
     - The site uses Google Gmail API to send the email
-    -  ... 
+      - Google API is not the easiest to use for sending emails to yourself, but I took it as a challange.
+      - I used this video, to set up my google account: (Sry, not the best quality, but it works...)
+        - [Youtube link](https://www.youtube.com/watch?v=JJ44WA_eV8E&ab_channel=Kif-Dev)  
+      - [Google Developers Console](https://console.cloud.google.com/apis)
+        - The domain verification was pretty straight forward, just upload a file, to the server to prove that you own the domain.
+        - The oAuth verification process, is overkill considering that I only want to send a few emails to myself.
+          - It asked for a "term of service" agreement that I clearly don't have.
+          - It also asked for a youtube link where I explain how my site workd... [Video](https://www.youtube.com/watch?v=dQw4w9WgXcQ) 
   - ### Notifications  
     - The site can display notification messages to communicate with the user.
   - ### Switch between Light-mode and Dark-mode
