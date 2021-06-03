@@ -90,7 +90,7 @@
         <small><%= section.small %></small>
       </div>
       <% section.p.forEach(p=>{ %>
-      <p><%= p %></p>
+      <p><%- p %></p>
       <% }) %> <% if (section.read_more) { %>
       <a class="read-more btn" href="<%= section.read_more %>">Read more</a>
       <% } %>

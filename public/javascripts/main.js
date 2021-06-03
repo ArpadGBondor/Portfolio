@@ -41,14 +41,17 @@ document.onreadystatechange = () => {
     }
 
     function notification(message = 'Test notification') {
-      const notif = document.createElement('div');
+      let notif = document.createElement('div');
       notif.classList.add('toast');
       notif.innerText = message;
 
       const close = document.createElement('button');
       close.classList.add('close');
       close.innerText = 'X';
-      close.addEventListener('click', () => toastNotifications.removeChild(notif));
+      close.addEventListener('click', () => {
+        toastNotifications.removeChild(notif);
+        notif = null;
+      });
 
       notif.appendChild(close);
 
@@ -58,9 +61,9 @@ document.onreadystatechange = () => {
         notif.classList.add('show');
       }, 0);
       setTimeout(() => {
-        notif.classList.remove('show');
+        notif && notif.classList.remove('show');
         setTimeout(() => {
-          toastNotifications.removeChild(notif);
+          notif && toastNotifications.removeChild(notif);
         }, 500);
       }, notificationTime);
     }

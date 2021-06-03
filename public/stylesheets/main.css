@@ -87,6 +87,7 @@ h6 {
   font-weight: 300;
   letter-spacing: 0.1em;
   margin: 0;
+  line-height: 1.1em;
 }
 
 p {
@@ -817,7 +818,7 @@ section.secondary p {
   background-size: 100% 200%;
   background-position: 0% 100%;
   color: var(--color-bg1);
-  font-size: 1.5em;
+  font-size: 1.25em;
   padding: 0.5em 2em;
   margin: 0 auto;
   border-radius: 1em;
