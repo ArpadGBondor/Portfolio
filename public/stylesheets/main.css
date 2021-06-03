@@ -825,6 +825,7 @@ section.secondary p {
   transition: var(--all-transition);
   box-shadow: var(--shadow);
   text-decoration: none;
+  text-align: center;
   display: block;
   cursor: pointer;
 }
