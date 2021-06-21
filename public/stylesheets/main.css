@@ -728,6 +728,7 @@ section.secondary .section-image {
   object-fit: scale-down;
   margin: 0;
   margin-bottom: 0;
+  border-radius: 50%;
 }
 
 section.secondary .section-title {
